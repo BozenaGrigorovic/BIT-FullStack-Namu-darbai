@@ -1,140 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&display=swap" rel="stylesheet">
     <title>Document</title>
     <style>
-        .content {
-            background-color:#f5f5f5;
-            height:600px;
-            width:80%;
-            margin-left:auto;
-            margin-right:auto;
+        * {
+     box-sizing: border-box;
         }
-        .post_container {
-            text-align:center;
+        .relative {
+            position: relative;
+            background-color: #f5f5f5;
+            width: 80%;
+            margin: 0 auto;
+            border: 1px solid #c0bcbc;
+            padding:20px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 13px;
         }
-        .post_option {
-            display:inline-block;
-            margin:0 5px;
-            width:23%;
-            background-color:white;
-            text-align:center;
+        .absolute {
+            position: absolute;
+        }
+        .postboxes {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .postbox-name {
+            display: flex;
+            flex-direction: column;
+            width:30%;
+            margin:0px auto 15px;
             padding:15px;
-            border:1px solid #e2e2e2;
+            background-color: white;
+            border:  1px solid #c0bcbc;
+            text-align: center;
         }
-        .post_option img {
-            height:35px;
+        .line__content {
+            display: flex;
+            justify-content: space-evenly;
         }
-        .grey_background {
-            background-color:#f5f5f5;
-            height:200px;
+        .form__title {
+            font-weight: bold;
+            margin-bottom: 15px;
+            margin-left:12px;
+            font-size: 1.1em;
         }
-        .post_bold_text {
-            font-weight:bold;
+        .form__item {
+            display: grid;
+            width: 45%;
+            margin:0 15px;
         }
-        .post_thin_text {
-            font-weight:100;
+        .form__item_wrapper {
+            display:flex;
+            flex-wrap:wrap;
         }
-        .post_price_text {
-            font-weight:bold;
+        .boxsize {
+            height:30px;
+            margin-top:10px;
+            margin-bottom: 10px;
         }
-        .city_choice {
-            margin:15px 25px;
+        .postbox_logo {
+            height:32px;
         }
-        .city_choice div:first-child {
-            float:left;
+        .shipping_price {
+            font-weight: bold;
+            font-size: 1.2em;
         }
-        .city_choice div:last-child {
-            float:right;
+        .postbox-name p {
+            line-height: 2;
+            margin-bottom: 0;
         }
-        .city_choice select {
-            width:300px;
-        }
-        .user_data div {
-            margin:15px 25px;
-        }
-        .user_data input {
-            width:300px;
-        }
-
-        .user_data div:first-child {
-            float:left;
-        }
-        .user_data div:last-child {
-            float:right;
+        .red_star {
+            color:red;
         }
     </style>
 </head>
+
 <body>
-    <div class="content">
-        <form style="background-color:#f5f5f5";>
-            <h3>Pristatymas į paštomatus</h3>
-                <div class="post_container">
-                    <div class="post_option">
-                        <label>
-                            <input type="radio" name="pastomatas" /> <br />
-                            <img src="lpxpress_logo.png" alt="lp express logo" /> <br />
-                            <p class="post_bold_text">Atsiėmimas LP EXPRESS paštomate</p>
-                            <p class="post_thin_text">2-4 darbo dienos</p>
-                            <p class="post_price_text">1,99 €</p>
-                        </label>
-                    </div>
-                    <div class="post_option">
-                        <label>
-                            <input type="radio" name="pastomatas" /> <br />
-                            <img src="omniva_logo.png" alt="lp express logo" /> <br />
-                            <p class="post_bold_text">Atsiėmimas Omniva paštomate</p>
-                            <p class="post_thin_text">2-4 darbo dienos</p>
-                            <p class="post_price_text">1,99 €</p>
-                        </label>
-                    </div>
-                    <div class="post_option">
-                        <label>
-                            <input type="radio" name="pastomatas" /> <br />
-                            <img src="dpd_logo.png" alt="lp express logo" /> <br />
-                            <p class="post_bold_text">Atsiėmimas DPD paštomate</p>
-                            <p class="post_thin_text">2-4 darbo dienos</p>
-                            <p class="post_price_text">1,99 €</p>
-                        </label>
-                    </div>
+    <div class="relative">
+        <form>
+            <h3 class="form__title">Pristatymas į paštomatus</h3>
+            <div class="postboxes">
+                <div class="postbox-name">
+                    <label>
+                        <input type="radio" name="postbox" />
+                        <p>
+                            <img class="postbox_logo" src="lpxpress_logo.png" alt="LP Express logo"> <br />
+                            <strong>Atsiėmimas LP Express paštomate</strong> <br />
+                            2-4 darbo dienos <br />
+                            <span class="shipping_price">1,99 €</span>
+                        </p>
+                    </label>
                 </div>
-            <h3>Pasirinkite pristatymo vietą</h3>
-            <div class="city_choice">
-                <div>
-                    <label>Miestas<span class="red_star">*</span></label> <br />
-                    <select placeholder="Vilnius" required >
-                        <option value="1">Vilnius</option>
+                <div class="postbox-name">
+                    <label>
+                        <input type="radio" name="postbox" />
+                        <p>
+                            <img class="postbox_logo" src="omniva_logo.png" alt="LP Express logo"> <br />
+                            <strong>Atsiėmimas Omniva paštomate</strong> <br />
+                            2-4 darbo dienos <br />
+                            <span class="shipping_price">1,99 €</span>
+                        </p>
+                    </label>
+                </div>
+                <div class="postbox-name">
+                    <label>
+                        <input type="radio" name="postbox" />
+                        <p>
+                            <img style="height: 35px;" class="postbox_logo" src="dpd_logo.png" alt="LP Express logo"> <br />
+                            <strong>Atsiėmimas DPD paštomate</strong> <br />
+                            2-4 darbo dienos <br />
+                            <span class="shipping_price"> 1,99 € </span>
+                        </p>
+                    </label>
+                </div>
+            </div>
+            <h3 class="form__title">Pasirinkite pristatymo vietą</h3>
+            <div class="form__item_wrapper">
+                <div class="form__item">
+                    <label for="postbox_city">Miestas<span class="red_star">*</span></label>
+                    <select class="boxsize" id="postbox_city">
+                        <option value="1">Garliava</option>
                         <option value="2">Kaunas</option>
                         <option value="3">Klaipėda</option>
+                        <option value="4">Vilnius</option>
                     </select>
                 </div>
-                <div>
-                    <label>Paštomato adresas (paštomatas)<span class="red_star">*</span></label> <br />
-                    <select placeholder="Vilnius" required >
-                        <option value="1">Vilnius</option>
+                <div class="form__item">
+                    <label for="postbox_address">Paštomato adresas (paštomatas)<span class="red_star">*</span></label>
+                    <select class="boxsize" id="postbox_address">
+                        <option value="1">IKI Garliava (Vytauto g. 67)</option>
                         <option value="2">Kaunas</option>
                         <option value="3">Klaipėda</option>
+                        <option value="4">Vilnius</option>
                     </select>
                 </div>
             </div>
-            <h3>Pateikite gavėjo duomenis</h3>
-            <div class="user_data">
-                <div>
-                    <label>Vardas<span class="red_star">*</span></label> <br />
-                    <input type="text" placeholder="Vardenis" required />
-                    <br />
-                    <label>Mobilaus telefono numeris<span class="red_star">*</span></label> <br />
-                    <input type="tel" placeholder="+37060012345" required />
-                </div>
-                <div>
-                    <label>Pavardė<span class="red_star">*</span></label> <br />
-                    <input type="text" placeholder="Pavardenis" required />
-                </div>
+            <h3 class="form__title"></label>Pateikite gavėjo duomenis</h3>
+            <div class="form__item_wrapper">
+            <div class="form__item">
+                <label>Vardas<span class="red_star">*</span></label>
+                <input class="boxsize" type="text" placeholder="Vardenis" required />
             </div>
+            <div class="form__item">
+                <label>Pavardė<span class="red_star">*</span></label>
+                <input class="boxsize" type="text" placeholder="Pavardenis" required />
+            </div>
+            <div class="form__item">
+                <label>Mobilaus telefono numeris<span class="red_star">*</span></label>
+                <input class="boxsize" type="tel" placeholder="+37060012345" required />
+            </div>
+        </div>
         </form>
     </div>
 </body>
+
 </html>
