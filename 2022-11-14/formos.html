@@ -11,72 +11,85 @@
     <title>Document</title>
     <style>
         * {
-     box-sizing: border-box;
+            box-sizing: border-box;
         }
+
         .relative {
             position: relative;
             background-color: #f5f5f5;
-            width: 80%;
+            max-width: 900px;
             margin: 0 auto;
             border: 1px solid #c0bcbc;
-            padding:20px;
+            padding: 20px;
             font-family: 'Open Sans', sans-serif;
             font-size: 13px;
         }
+
         .absolute {
             position: absolute;
         }
+
         .postboxes {
             display: flex;
             justify-content: space-evenly;
         }
+
         .postbox-name {
             display: flex;
             flex-direction: column;
-            width:30%;
-            margin:0px auto 15px;
-            padding:15px;
+            width: 30%;
+            margin: 0px auto 15px;
+            padding: 15px;
             background-color: white;
-            border:  1px solid #c0bcbc;
+            border: 1px solid #c0bcbc;
             text-align: center;
         }
+
         .line__content {
             display: flex;
             justify-content: space-evenly;
         }
+
         .form__title {
             font-weight: bold;
             margin-bottom: 15px;
-            margin-left:12px;
+            margin-left: 12px;
             font-size: 1.1em;
         }
+
         .form__item {
             display: grid;
             width: 45%;
-            margin:0 15px;
+            margin: 0 15px;
         }
+
         .form__item_wrapper {
-            display:flex;
-            flex-wrap:wrap;
+            display: flex;
+            flex-wrap: wrap;
         }
+
         .boxsize {
-            height:30px;
-            margin-top:10px;
+            height: 30px;
+            margin-top: 10px;
             margin-bottom: 10px;
         }
+
         .postbox_logo {
-            height:32px;
+            height: 32px;
         }
+
         .shipping_price {
             font-weight: bold;
             font-size: 1.2em;
         }
+
         .postbox-name p {
             line-height: 2;
             margin-bottom: 0;
         }
+
         .red_star {
-            color:red;
+            color: red;
         }
     </style>
 </head>
@@ -112,7 +125,8 @@
                     <label>
                         <input type="radio" name="postbox" />
                         <p>
-                            <img style="height: 35px;" class="postbox_logo" src="dpd_logo.png" alt="LP Express logo"> <br />
+                            <img style="height: 35px;" class="postbox_logo" src="dpd_logo.png" alt="LP Express logo">
+                            <br />
                             <strong>Atsiėmimas DPD paštomate</strong> <br />
                             2-4 darbo dienos <br />
                             <span class="shipping_price"> 1,99 € </span>
@@ -143,19 +157,19 @@
             </div>
             <h3 class="form__title"></label>Pateikite gavėjo duomenis</h3>
             <div class="form__item_wrapper">
-            <div class="form__item">
-                <label>Vardas<span class="red_star">*</span></label>
-                <input class="boxsize" type="text" placeholder="Vardenis" required />
+                <div class="form__item">
+                    <label>Vardas<span class="red_star">*</span></label>
+                    <input class="boxsize" type="text" placeholder="Vardenis" required />
+                </div>
+                <div class="form__item">
+                    <label>Pavardė<span class="red_star">*</span></label>
+                    <input class="boxsize" type="text" placeholder="Pavardenis" required />
+                </div>
+                <div class="form__item">
+                    <label>Mobilaus telefono numeris<span class="red_star">*</span></label>
+                    <input class="boxsize" type="tel" placeholder="+37060012345" required />
+                </div>
             </div>
-            <div class="form__item">
-                <label>Pavardė<span class="red_star">*</span></label>
-                <input class="boxsize" type="text" placeholder="Pavardenis" required />
-            </div>
-            <div class="form__item">
-                <label>Mobilaus telefono numeris<span class="red_star">*</span></label>
-                <input class="boxsize" type="tel" placeholder="+37060012345" required />
-            </div>
-        </div>
         </form>
     </div>
 </body>
